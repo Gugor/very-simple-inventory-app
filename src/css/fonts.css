@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'LeagueSpartan-VariableFont_wght';
+    src: url(../fonts/LeagueSpartan-VariableFont_wght.eot);
+    src: url(../fonts/LeagueSpartan-VariableFont_wght.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/LeagueSpartan-VariableFont_wght.otf) format('otf'),
+         url(../fonts/LeagueSpartan-VariableFont_wght.ttf) format('truetype'),
+         url(../fonts/LeagueSpartan-VariableFont_wght.woff) format('woff'),
+         url(../fonts/LeagueSpartan-VariableFont_wght.woff2) format('woff2');
+  }
+@font-face {
+    font-family: 'Alata-Regular';
+    src: url(../fonts/Alata-Regular.eot);
+    src: url(../fonts/Alata-Regular.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/Alata-Regular.otf) format('otf'),
+         url(../fonts/Alata-Regular.ttf) format('truetype'),
+         url(../fonts/Alata-Regular.woff) format('woff'),
+         url(../fonts/Alata-Regular.woff2) format('woff2');
+  }

@@ -1,0 +1,173 @@
+@import url('./css/variables.css');
+@import url('./css/fonts.css');
+
+/*******************
+****** RESET *******
+*******************/
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+h1, h2 ,h3 ,h4, h5 
+{
+  font-family: "LeagueSpartan-VariableFont_wght";
+  font-weight: 400;
+}
+
+body 
+{
+  background-color: var(--global-color-background);
+  color: var(--global-color-text);
+  font-family: "Alata-Regular";
+  font-weight: 300;
+  font-size: 12px;
+}
+
+#root 
+{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:100vh;
+}
+.appHeader 
+{
+   width:100%;
+   position:absolute;
+   top:0;
+   left:0;
+   right:0;
+   bottom:20px;
+   height: 20px;
+   background-color: var(--global-color-header) ;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   filter: drop-shadow(0px 2px 2px rgba(2, 2, 1, 0.25));
+   border-bottom:1px solid #1d1d1d;
+   z-index: 100;
+}
+.appHeader h1 
+{
+  font-size: 14px;
+  text-align: center;
+}
+.appWrapper 
+{
+  width:100%;
+  height: 96vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:20px;
+  
+}
+.contentSection 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1%;
+  padding-top:5px;
+  padding-left:150px;
+}
+.contentSection .inventoryForm 
+{
+  width: 35%;
+  border: 1px solid #2d2d2d;
+  border-radius: 15px;
+  padding:1.5%;
+  box-shadow: 2px 2px 2px 2px rgb(32, 32, 32);
+}
+
+.inventorySection 
+{
+  display: flex;
+  flex-direction: column;
+  
+  border: 1px solid #2d2d2d;
+}
+.inventorySection .topSection 
+{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3% 5%;
+    padding-right:5%;
+    padding-left:5%;
+}
+.buttonWrapper 
+{
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    height:40px;
+    justify-content: center;
+    align-items: center;
+}
+.buttonWrapper button 
+{
+  width:100%;
+  max-width: 200px;
+  height:30px;
+  border-radius: 15px;
+  border:none;
+  background-color: #053B3F;
+  color: var(--global-color-text);
+}
+.topSection .searchBar 
+{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+}
+
+.topSection .searchBar input,
+.topSection .searchBar .searchImageWrapper 
+{
+  width: 100%;
+  background-color: #1F1F1F;
+  border: none;
+}
+.topSection .searchBar input
+{
+  border-radius: 15px 0px 0px 15px;
+}
+.topSection .searchBar .searchImageWrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:30px;
+  border-radius: 0px 15px 15px 0px;
+}
+.topSection .searchBar .searchImageWrapper img
+{
+ width:20px;
+ height: 20px;
+}
+.inventorySection .inventory 
+{
+  padding: 1.5%;
+  border: 1px solid #2d2d2d;
+}
+
+.appMenu 
+{
+  position: absolute;
+  width: 100%;
+  max-width:150px;
+  top:0;
+  left:0;
+  right:150px;
+  bottom:0;
+  background-color: var(--global-color-menu);
+  z-index: 90;
+}
+

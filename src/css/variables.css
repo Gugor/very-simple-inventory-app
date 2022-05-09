@@ -1,0 +1,11 @@
+:root 
+{
+    /* App Colors */
+    --global-color-background: rgb(39, 39, 39);
+    --global-color-text: rgb(201, 201, 201);
+    --global-color-header: rgb(33,33,33);
+    --global-color-menu: rgb(31,31,31);
+
+    /* Buttons */
+    --global-color-button1: #053B3F;
+  }

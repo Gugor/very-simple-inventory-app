@@ -1,14 +1,16 @@
 import React from "react";
-import { InventoryItem } from "./InventoryItem";
+import { InventoryHeader } from "./InventoryHeader";
+import { InventoryItems } from "./InventoryItem";
 
-export function Inventory ({ inventoryItems }) 
+export function Inventory ({ inventoryHeaders,inventoryItems }) 
 {
     
     return (
         <section class="inventory">
+            <InventoryHeader inventoryHeaders={ inventoryHeaders } />
             {
-                inventoryItems.map((item) => (
-                    <InventoryItem item={item} />
+                inventoryItems.map((row) => (
+                    <InventoryItems key={row.id} inventoryHeaders={inventoryHeaders} inventoryItems={row} />
                 ))
             }
         </section>

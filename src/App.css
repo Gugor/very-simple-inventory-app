@@ -87,7 +87,7 @@ body
 {
   display: flex;
   flex-direction: column;
-  
+  width:100%;
   border: 1px solid #2d2d2d;
 }
 .inventorySection .topSection 
@@ -122,6 +122,7 @@ body
 }
 .topSection .searchBar 
 {
+  position: relative;
   width:100%;
   display: flex;
   flex-direction: row;
@@ -137,7 +138,18 @@ body
 }
 .topSection .searchBar input
 {
-  border-radius: 15px 0px 0px 15px;
+  padding: 4px 4px 4px 15px;
+  color: var(--global-color-text);
+  border-radius: 15px 15px 15px 15px;
+}
+.topSection .searchBar img 
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 7px;
+  right: 10px;
+  bottom: 7px;
 }
 .topSection .searchBar .searchImageWrapper
 {
@@ -157,7 +169,43 @@ body
   padding: 1.5%;
   border: 1px solid #2d2d2d;
 }
-
+.inventory .inventoryTableHeader 
+{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  border-top: 1px solid var(--global-color-text);
+  border-bottom: 1px solid var(--global-color-text);
+}
+.inventory .inventoryTableHeader .inventoryHeaderCell 
+{
+  width:100%;
+  padding:1%;
+  text-align: center;
+}
+.inventory .inventoryTableRow 
+{
+  width:100%;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #242424;
+  border-top: 2px solid var(--global-color-background);
+  border-bottom: 2px solid var(--global-color-background);
+}
+.inventory .inventoryTableRow:hover 
+{
+  background-color:#053B3F;
+} 
+.inventory .inventoryTableRow .inventoryCell 
+{
+  width:100%;
+  text-align: center;
+}
 .appMenu 
 {
   position: absolute;

@@ -1,7 +1,27 @@
 import React from "react";
 
-export function InventoryItem({item}) 
+export function InventoryItems({inventoryHeaders,inventoryItems}) 
 {
-    const { objectName, value , description} = item;
-  return <div><span>{objectName}</span><span>{value}</span> <span>{description}</span></div>;
+    let dataKeys = []
+    for(var key in inventoryHeaders) 
+    {
+      if(inventoryHeaders.hasOwnProperty(key)) 
+      {
+        dataKeys.push(key);
+      }
+    }
+    let rowData = []
+    for(var i= 0; i < dataKeys.length; i++) 
+    {
+      rowData.push(inventoryItems[dataKeys[i]]);
+    }
+  return (
+    <div class="inventoryTableRow">
+        {
+          rowData.map((cell)=>(
+            <div class="inventoryCell">{cell}</div>
+          ))
+        }
+    </div>
+  )
 }

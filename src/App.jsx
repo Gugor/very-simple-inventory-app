@@ -10,9 +10,10 @@ import { ButtonAdd } from './components/ButtonAdd';
 
 function App() 
 {
+  const inventoryHeaders = {objectImage:"Imagen",inventoryCode:"Código Inventario",objectName:"Nombre del Objeto",destiny:"Destino",dimensions:"Dimensiones"};
   const [inventoryItems, setInventoryItem] = useState([
-    {id:uuidv4(), inventoryCode:"0001", objectName:"Alfombra pequeña de Oración", country:"Iran", acquisitionDate: Date(), dimensions: "100x90cm", description:"Es una alfombra de oración voladora con conexión wifi al cielo", value:900, currency:'€'  },
-    {id:uuidv4(), inventoryCode:"0002", objectName:"Tasbih de shamatsu", country: "Uzbekistan", acquisitionDate: Date(), dimensions: "42cm", description:"Tasbih 99 mil", value:120, curency:"€"  }
+    {id:uuidv4(), inventoryCode:"0001", objectName:"Alfombra pequeña de Oración",destiny:"S", country:"Iran", acquisitionDate: Date(), dimensions: "100x90cm", description:"Es una alfombra de oración voladora con conexión wifi al cielo", value:900, currency:'€'  },
+    {id:uuidv4(), inventoryCode:"0002", objectName:"Tasbih de shamatsu", destiny:"T",country: "Uzbekistan", acquisitionDate: Date(), dimensions: "42cm", description:"Tasbih 99 mil", value:120, curency:"€"  }
   ])
 
   const handleAddItem = function (items)  
@@ -36,7 +37,7 @@ function App()
               <ButtonAdd handleAddItem={ handleAddItem } />
               <Search />
             </div>
-            <Inventory inventoryItems={ inventoryItems } />
+            <Inventory inventoryHeaders={ inventoryHeaders } inventoryItems={ inventoryItems } />
           </div>
         </section>
       </div>

@@ -1,52 +1,63 @@
-import React from 'react'
-import { InventoryItems } from './InventoryItem';
+import { React, useRef} from 'react'
+import { AutoIncrement } from './formfields/AutoIncrement';
+import { ImageField } from './formfields/ImageField';
+import { TextArea } from './formfields/TextArea';
+import { TextField } from './formfields/TextField';
 
-export function InputField({fieldData, value}) 
+export function InputField({fieldData, value, onChange, updateFormItem}) 
 {
     const inputType = fieldData.type;
     const content = fieldData.content;
-    console.log(content);
+
+
     if ( inputType === "text") 
     {
-           return <input class="inventoryField" type="text" value={value} placeholder={fieldData.placeholder} />
+           console.log('Field Data InpText')
+           console.log(fieldData)
+           return <TextField value={value} fieldData={fieldData} name={fieldData.key} id={fieldData.key} updateFormItem={updateFormItem} placeholder={fieldData.placeholder} />
     }
     if ( inputType === "number") 
     {
-           return <input class="inventoryField"type="number" value={value} placeholder={fieldData.placeholder} />
+           return <AutoIncrement value={value} name={fieldData.key} id={fieldData.key} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
-    if ( inputType === "textArea") 
+    if ( inputType === "autoincrement" ) 
     {
-           return <textarea class="inventoryField" type="text" value={value} placeholder={fieldData.placeholder} ></textarea>
+           const autoincrement = function () { /*Database call, get biggest number from given field*/}
+           return <input className="inventoryField" onChange={onChange} type="number" value={value} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
-    if ( inputType === "image") 
+    if ( inputType === "textArea" ) 
     {
-           return <input class="inventoryField" type="image" value={value} placeholder={fieldData.placeholder} />
+           return <TextArea value={value} fieldData={fieldData} name={fieldData.key} id={fieldData.key} updateFormItem={updateFormItem} placeholder={fieldData.placeholder} />
+    }
+    if ( inputType === "image" ) 
+    {
+           return <ImageField value={value} name={fieldData.key} id={fieldData.key} updateFormItem={updateFormItem}/>
     }
     if ( inputType === "file") 
     {
-           return <input class="inventoryField" type="file" value={value} placeholder={fieldData.placeholder} />
+           return <input className="inventoryField"  type="file" value={value} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
     if ( inputType === "time") 
     {
-           return <input  class="inventoryField"type="time" placeholder={fieldData.placeholder} />
+           return <input  className="inventoryField" type="time" updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
     if ( inputType === "url") 
     {
-           return <input class="inventoryField" type="url" value={value} placeholder={fieldData.placeholder} />
+           return <input className="inventoryField"  type="url" value={value} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
 
     if ( inputType === "email") 
     {
-           return <input class="inventoryField" type="email" value={value} placeholder={fieldData.placeholder} />
+           return <input className="inventoryField"  type="email" value={value} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
     if ( inputType === "color") 
     {
-           return <input class="inventoryField" type="color" value={value} placeholder={fieldData.placeholder} />
+           return <input className="inventoryField"  type="color" value={value} updateFormItem={updateFormItem}placeholder={fieldData.placeholder} />
     }
     if ( inputType === "select") 
     {
            return (
-            <select class="inventoryField" type="select" >
+            <select className="inventoryField"  type="select" updateFormItem={updateFormItem} >
                 {
                     content.map((opt) => (
                         <option value={opt}>{opt}</option>
@@ -58,9 +69,9 @@ export function InputField({fieldData, value})
     if ( inputType === "price") 
     {
            return (
-               <div class="currencyField">
-                   <input class="inventoryField" type="number" placeholder="Ej: 100" />
-                    <select class="inventoryField" type="select" >
+               <div className="currencyField">
+                   <input className="inventoryField" type="number" placeholder="Ej: 100" />
+                    <select className="inventoryField" type="select" >
                         {
                             content.map((opt) => (
                                 <option value={opt.symbol}>{ opt.currency }{" (" + opt.symbol +")"}</option>

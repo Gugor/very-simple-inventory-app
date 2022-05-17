@@ -90,6 +90,7 @@ body
 .contentSection .inventoryForm 
 {
   width: 35%;
+  min-width:300px;
   border: 1px solid #2d2d2d;
   border-radius: 15px;
   padding:1.5%;
@@ -126,6 +127,14 @@ body
   border:none;
   background-color: #053B3F;
   color: var(--global-color-text);
+}
+
+.greenBtn 
+{
+  color: var(--global-color-text);
+  border-radius: 7px;
+  border:none;
+  background-color: #053B3F !important;
 }
 .topSection .searchBar 
 {
@@ -223,6 +232,10 @@ body
 }
 
 /* Forms Styles */
+.inventoryForm 
+{
+  overflow: hidden;
+}
 .inventoryForm .inventoryField 
 {
   width:100%;
@@ -242,6 +255,8 @@ body
 .inventoryForm textarea.inventoryField 
 {
   min-height: 100px;
+  max-height: 250px;
+  resize:vertical;
 } 
 
 .inventoryForm .inventoryField > option 
@@ -254,3 +269,24 @@ body
   background-color: #053B3F !important;
 }
 
+/* UI Utilities */
+.scroll_enabled 
+{
+  overflow-y: scroll;
+  
+}
+.scroll_enabled::-webkit-scrollbar 
+{
+  height: 100%;
+  width:15px;
+}
+.scroll_enabled::-webkit-scrollbar-corner 
+{
+  background-color: #1F1F1F;
+}
+.scroll_enabled::-webkit-scrollbar-track {
+  background-color: rgba(51, 48, 48, 0);
+}
+.scroll_enabled::-webkit-scrollbar-thumb {
+  background-color: rgba(20, 3, 3, 0);
+}

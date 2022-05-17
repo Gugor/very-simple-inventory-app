@@ -1,16 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { InputField } from './InputField';
-
-export function InventoryForm({ inventoryFields, inventoryItems } ) 
+import {v4 as  uuidv4 } from 'uuid';
+export function InventoryForm({ inventoryFields, inventoryItems, setInventoryItems } ) 
 {
-  console.log(inventoryFields);
+ 
+  const [inventoryState, setInventoryState ] = useState( inventoryItems);
+
+  const [formState, setFormState] = useState();
+  const updateFormItem = function(key,value) 
+  {
+     setFormState(prevFormState => {
+       console.log('Froms state:' + prevFormState)
+       const states = prevFormState || []
+       console.log(key + ":" + value)
+       states[key] = value
+       console.log(states)
+       return states
+    })
+    console.log("Frm Ste: " + formState);
+  }
+  const handleOnChange = (e) => {
+    e.target.id = uuidv4();
+  }
+
+  const handleSendRegistry = (e) => {
+    e.preventDefault()
+    console.log('Send Registry');
+    console.log(formState);
+  }
   return (
-    <section class="inventoryForm">
+    <form className="inventoryForm scroll_enabled " onSubmit={handleSendRegistry}>
+      <h1>Update Inventory</h1>
       {
         inventoryFields.map((field) =>(
-          <InputField fieldData={field} value={inventoryItems[field.key]} />
+          <InputField key={field.id} fieldData={field} updateFormItem={updateFormItem}/>
         ))
       }
-    </section>
+      <button className="buttonWrapper greenBtn" onClick={handleSendRegistry}>Enviar</button>
+    </form>
   )
 }
